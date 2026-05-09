@@ -113,8 +113,9 @@ def executor_agent(plan_steps, model: str = "openai:gpt-4o"):
 
         print(f"✅ Output:\n{output}")
 
-    print(w_utils.summarize_usages(all_usages))
-    return history
+    summary = w_utils.summarize_usages(all_usages)
+    print(summary)
+    return history, summary
 
 
 
@@ -128,7 +129,7 @@ if __name__ == "__main__":
             f.write(f"{i}. {step}\n")
     print(f"Plan saved to {plan_file}")
 
-    history = executor_agent(plan_steps, model=config.planner_model)
+    history, summary = executor_agent(plan_steps, model=config.planner_model)
 
     for step, agent_name, output in history:
         if agent_name == "writer_agent":
@@ -137,7 +138,11 @@ if __name__ == "__main__":
             print("Report saved to report.md")
             break
 
-    print("✓ Workflow completed successfully")
+    with open("usage_summary.txt", "w") as f:
+        f.write(summary)
+    print("Usage summary saved to usage_summary.txt")
+
+    print("\n✓ Workflow completed successfully")
     print("=" * 34)
 
 

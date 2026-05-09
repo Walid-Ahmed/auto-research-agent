@@ -111,6 +111,7 @@ python main.py
 |---|---|
 | `plan.txt` | Numbered list of steps the planner generated |
 | `report.md` | Final research report in Markdown format |
+| `usage_summary.txt` | Token counts and cost breakdown for every agent call |
 | Console | Per-step agent output + usage/cost summary table |
 
 ---
