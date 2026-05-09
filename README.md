@@ -115,6 +115,29 @@ python main.py
 
 ---
 
+## Sample Plan (`plan.txt`)
+
+The planner autonomously decides how many steps to generate and which agents to use. Here is a typical output for the topic **"Java Programming Language"**:
+
+```
+1. Use the research agent to search Wikipedia for the history and overview of the Java programming language
+2. Use the research agent to search arXiv for academic papers on Java performance, concurrency, and JVM internals
+3. Use the research agent to search the web for recent Java ecosystem trends, tooling, and community updates
+4. Use the writer agent to draft a comprehensive research report based on all gathered findings
+5. Use the editor agent to review, revise, and polish the draft into a final publication-ready report
+```
+
+And for **"Quantum Computing"**:
+
+```
+1. Use the research agent to search Wikipedia for an overview of quantum computing principles
+2. Use the research agent to search arXiv for recent breakthroughs in quantum algorithms and hardware
+3. Use the writer agent to synthesize findings into a structured technical report
+4. Use the editor agent to refine the report for clarity and accuracy
+```
+
+---
+
 ## Usage Summary Example
 
 ```
