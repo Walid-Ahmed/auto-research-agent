@@ -1,0 +1,37 @@
+import os
+from dotenv import load_dotenv
+from openai import OpenAI
+
+# --- Load environment variables ---
+load_dotenv(override=True)
+# --- API keys ---
+openai_api_key = os.getenv("OPENAI_API_KEY")
+weather_api_key = os.getenv("OPENWEATHER_API_KEY")
+
+# --- Check keys ---
+if openai_api_key:
+    print(f"✅ OpenAI API Key found, begins with: {openai_api_key[:8]}")
+else:
+    print("❌ OpenAI API Key not set in .env")
+
+if weather_api_key:
+    print("✅ OpenWeather API Key found")
+else:
+    print("❌ OpenWeather API Key missing")
+
+# --- OpenAI client ---
+openai = OpenAI(api_key=openai_api_key)
+
+# --- Models ---
+CHAT_MODEL = "gpt-4o-mini"
+IMAGE_MODEL = "dall-e-3"
+
+######################################################################
+topic="Java Programming Language"
+task=f"Gathers external information using tools like Arxiv, Tavily, and Wikipedia and Your task is to transform research notes into clear, accurate,well-structured written content"
+
+
+planner_model="o4-mini"
+writer_model="o4-mini"
+executor_model="o4-mini"
+editor_model="o4-mini"

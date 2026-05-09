@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+images/
+report.md
+plan.txt
