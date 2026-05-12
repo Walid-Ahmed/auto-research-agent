@@ -16,7 +16,7 @@ def planner_agent(max_steps=4 ,limit_steps: bool = True):
     # ==================== USAGE INFO ====================
     usage=w_utils.get_usage(response, model=config.planner_model, task_name="planner_agent")
 
-    plan_steps = ast.literal_eval(steps_str)
+    plan_steps = ast.literal_eval(w_utils.clean_json_block(steps_str))
 
     if limit_steps:
         plan_steps = plan_steps[:min(len(plan_steps), max_steps)]

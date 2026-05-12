@@ -31,7 +31,7 @@ topic="Java Programming Language"
 task=f"Gathers external information using tools like Arxiv, Tavily, and Wikipedia and Your task is to transform research notes into clear, accurate,well-structured written content"
 
 
-planner_model="o4-mini"
-writer_model="o4-mini"
-executor_model="o4-mini"
-editor_model="o4-mini"
+planner_model="claude-sonnet-4-6"
+writer_model="claude-sonnet-4-6"
+executor_model="claude-sonnet-4-6"
+editor_model="claude-sonnet-4-6"
